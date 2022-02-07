@@ -42,7 +42,7 @@ static void cellToString(sqlite3_context *ctx, int argc, sqlite3_value **argv) {
     return;
   }
 
-  sqlite3_result_text(ctx, result, 16, SQLITE_TRANSIENT);
+  sqlite3_result_text(ctx, result, -1, SQLITE_TRANSIENT);
 }
 
 
