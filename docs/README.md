@@ -1,6 +1,17 @@
-# sqlite_h3
+# sqlite_h3 ⬡‿⬠
 
-An SQLite extension for working with geographic data in the ⬡[H3 global grid](https://h3geo.org/).
+An SQLite extension for working with geographic data in the [H3 global grid](https://h3geo.org/).
+
+
+### Usage
+
+You'll need only the stand-alone `sqlite_h3.so`. You can load this extension from within SQLite, for example from SQLite's command-line interface via:
+
+    SQLite version 3.31.1 2020-01-27 19:55:54
+    sqlite> .load dist/sqlite_h3.so
+
+or via the API you're using (for example, [`load_extension`](https://www.sqlite.org/c3ref/load_extension.html) from C, [`enable_load_extension`/`load_extension`](https://docs.python.org/3/library/sqlite3.html#sqlite3.Connection.load_extension) from Python).
+
 
 
 ### License
