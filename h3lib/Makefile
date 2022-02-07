@@ -28,6 +28,10 @@ h3: correct-directory
 clean: correct-directory
 	rm -rf h3 build
 
+fullclean: clean correct-directory
+	rm -f libh3.a h3api.h
+
+
 correct-directory:
 	@grep -q "e040b192-ad6d-458f-80b5-1fcea717db6a is only found in sqlite_h3/h3lib" Makefile
 .PHONY: correct-directory

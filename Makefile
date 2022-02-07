@@ -6,12 +6,21 @@ all: dist/sqlite_h3.so
 dist/sqlite_h3.so: src/sqlite_h3.o h3lib/libh3.a
 	$(CC) $(CFLAGS) -o $@ $^
 
-# implicit rule something akin too:
-# %.o: %.c
-# 	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
+%.o: %.c prerequisites
+	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
+
+prerequisites: h3lib/h3api.h h3lib/libh3.a
+h3lib/h3api.h:
+	$(MAKE) -C h3lib
+h3lib/libh3.a:
+	$(MAKE) -C h3lib
 
 clean: correct-directory
 	rm -f src/*.o
+
+fullclean: clean correct-directory
+	rm -f dist/sqlite_h3.so
+	$(MAKE) -C h3lib fullclean
 
 tests: dist/sqlite_h3.so
 	$(MAKE) -C $@
