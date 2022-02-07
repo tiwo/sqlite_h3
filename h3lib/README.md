@@ -1,1 +1,1 @@
-You'll need the static, position-independent-code H3 library in this directory under static/libh3.a
+You'll need the static, position-independent-code H3 library in this directory as libh3.a

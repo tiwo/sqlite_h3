@@ -1,9 +1,9 @@
 H3_LIBRARYVERSION = v3.7.2
 H3_LIBRARYVERSION = HEAD
 
-all: static/libh3.a
+all: libh3.a
 
-static/libh3.a: build/h3/lib/libh3.a
+libh3.a: build/h3/lib/libh3.a
 	cp -a $< $@
 
 build/h3/lib/libh3.a: build h3
