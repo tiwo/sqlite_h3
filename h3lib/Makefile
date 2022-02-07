@@ -19,6 +19,7 @@ build:
 h3: correct-directory
     
 	test -d h3 || git clone --no-checkout https://github.com/uber/h3.git h3
+	@test -d h3/.git
 	@( cd h3 && git config --local advice.detachedHead false )
 	( cd h3 && git checkout $(H3_LIBRARYVERSION) )
 
