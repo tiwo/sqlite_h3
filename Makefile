@@ -13,6 +13,10 @@ dist/sqlite_h3.so: src/sqlite_h3.o h3lib/libh3.a
 clean: correct-directory
 	rm -f src/*.o
 
+tests: dist/sqlite_h3.so
+	$(MAKE) -C $@
+.PHONY: tests
+
 correct-directory:
 	@grep -q "238c00f0-aa08-4eef-bf3d-ecc104b21788 is only found in sqlite_h3's project root" Makefile
 .PHONY: correct-directory
