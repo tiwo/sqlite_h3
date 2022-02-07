@@ -22,6 +22,7 @@ h3: correct-directory
 	@test -d h3/.git
 	@( cd h3 && git config --local advice.detachedHead false )
 	( cd h3 && git checkout $(H3_LIBRARYVERSION) )
+.PHONY: h3
 
 
 clean: correct-directory
