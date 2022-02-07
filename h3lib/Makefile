@@ -11,7 +11,7 @@ libh3.a: build/h3/lib/libh3.a
 
 build/h3/lib/libh3.a: build h3
 	( cd build && cmake -Wno-dev .. )
-	( cd build && make )
+	$(MAKE) -C build
 
 build:
 	mkdir -p $@
