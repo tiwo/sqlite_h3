@@ -6,9 +6,12 @@ all: static/libh3.a
 static/libh3.a: build/h3/lib/libh3.a
 	cp -a $< $@
 
-build/h3/lib/libh3.a: h3
+build/h3/lib/libh3.a: build h3
 	( cd build && cmake -Wno-dev .. )
 	( cd build && make )
+
+build:
+	mkdir -p $@
 
 h3: correct-directory
     
@@ -18,7 +21,7 @@ h3: correct-directory
 
 
 clean: correct-directory
-	rm -rf h3 build/*
+	rm -rf h3 build
 
 correct-directory:
 	@grep -q "e040b192-ad6d-458f-80b5-1fcea717db6a" Makefile
