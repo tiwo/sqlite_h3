@@ -1,7 +1,2 @@
-/build/
-/static/
-/h3/
-
 # ignore build products - meaning we'll have to force publishing them with 'git add -f'
-/h3api.h3
-/libh3.a
+/sqlite_h3.so
